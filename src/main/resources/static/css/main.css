@@ -1,0 +1,98 @@
+#header{
+	text-align: left;
+	height:80px;
+	background-color: rgb(240, 248, 255);
+}
+#header h3{
+	font-size: 40px;
+	position: absolute;
+	top:25px;
+	left:10%;
+}
+#header .user_ico .user_ico_img img{
+	width:18px;
+	height:18px;
+	float: right;
+	margin-top: 1.5%;
+}
+#header a{
+	float:right;
+	margin-top: 1.5%;
+	font-size: 20px;
+	margin-right: 10%;
+	margin-left: 1%;
+}
+
+#header .header_logo .header_logo_img img{
+    width:95px;
+    height:80px;
+	margin-left: 5%;
+	float: left;
+}
+#leftMenu{
+	width:20%;
+	float:left;
+	
+}
+#leftMenu ul{
+	margin-left: 25%;
+/*	border-right:3px solid #F0F8FF;*/
+}
+#leftMenu ul li{
+	text-align: center;
+	font-size: 30px;
+	line-height:35px;
+}
+#leftMenu ul li img{
+	width: 20px;
+	height:20px;
+	margin-right: 3%;
+}
+#cont_mypage{
+	width:calc(80% - 3px);
+	border-left:3px solid #F0F8FF;
+/*	background-color: aqua;*/
+	float: right;
+}
+
+#cont_mypage .cont_mypage_wrap{
+	display: flex;
+	font-size: 30px;
+}
+
+#cont_mypage .cont_mypage_left{
+	width: 40%;
+}
+#cont_mypage .cont_mypage_left a{
+	float:right;
+}
+#cont_mypage .cont_mypage_right{
+	width:50%;
+	float: right;
+	margin-left: 1%;
+}
+#cont_mypage button{
+	float: right;
+}
+
+
+/*#wrap{overflow: auto;}*/
+/*#cont_mypageEdit{overflow: hidden;}*/
+/*#cont_apply{overflow: hidden;}*/
+/*#cont_recommend{overflow: hidden;}*/
+/*#cont_scrap{overflow: hidden;}*/
+/*#cont_resume{overflow: hidden;}*/
+/*#cont_myQuestion{overflow: hidden;}*/
+
+#footer{
+	background-color:#DCDCDC;
+}
+
+
+
+
+
+
+
+
+
