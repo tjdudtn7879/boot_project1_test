@@ -43,10 +43,10 @@
         </div><!-- end leftMenu-->
 
         <div id="cont_mypage">
-            <a class="cont_mypage_ID">아이디<!--여기에 아이디정보 받은거 추가 --></a>
-            <a class="cont_mypage_corpName">기업명<!--여기에 기업명정보 받은거 추가 --></a>
-            <a class="cont_mypage_corpEmail">이메일<!--여기에 이메일정보 받은거 추가 --></a>
-            <a class="cont_mypage_employees">직원수<!--여기에 직원수정보 받은거 추가 --></a>
+            <a class="cont_mypage_ID">${dto.corp_id}<!--여기에 아이디정보 받은거 추가 --></a>
+            <a class="cont_mypage_corpName">${dto.corp_name}<!--여기에 기업명정보 받은거 추가 --></a>
+            <a class="cont_mypage_corpEmail">${dto.corp_email}<!--여기에 이메일정보 받은거 추가 --></a>
+            <a class="cont_mypage_employees">${dto.corpInpo_empNo}<!--여기에 직원수정보 받은거 추가 --></a>
             <a class="cont_mypage_bossName">대표명<!--여기에 대표명정보 받은거 추가 --></a>
 
             <button onclick="">정보수정</button><!--onclick에 버튼누르면 cont_mypageEdit로 가는 메소드 생성후 기입 -->
@@ -54,10 +54,10 @@
 
         <div id="cont_mypageEdit">
             <h2>회원정보변경</h2>
-            <a>아이디<!--여기에 아이디정보 받은거 추가 --></a>
+            <a>${dto.corp_id}<!--여기에 아이디정보 받은거 추가 --></a>
             <a>비밀번호</a>
             <input type="text" name="cont_mypageEdit_PWD" size="50">
-            <a>기업명<!--여기에 기업명정보 받은거 추가 --></a>
+            <a>${dto.corp_name}<!--여기에 기업명정보 받은거 추가 --></a>
             <a>전화번호</a>
             <input type="text" name="cont_mypageEdit_phoneNumber1" size="10">
             <input type="text" name="cont_mypageEdit_phoneNumber2" size="20">
@@ -71,9 +71,13 @@
             <a>사업자번호</a>
             <input type="text" name="cont_mypageEdit_corpNum" size="50"> <!-- db에 사업자번호 확인해서 이름바꾸기-->
             <a>직원수</a>
-            <input type="text" name="cont_mypageEdit_phoneNumber1" size="10">
-            <a>직원수</a>
-            <input type="text" name="cont_mypageEdit_phoneNumber1" size="10">
+            <input type="text" name="cont_mypageEdit_empNo" size="10">
+            <a>대표명</a>
+            <input type="text" name="cont_mypageEdit_bossName" size="10">
+            <a>평균연봉</a>
+            <input type="text" name="cont_mypageEdit_Sal" size="10">
+            <a>기업소개</a>
+            <input type="text" name="cont_mypageEdit_empInfo" size="10">
 
             <button type="submit" value="수정하기"></button>
             <input type="submit" value="취소하기" formaction="cancel"> <!-- 컨트롤러단에 cancel 생성하기-->
@@ -104,6 +108,12 @@
                 <!-- 공고번호를 확인해서 삭제하는 컨트롤러단 delete 만들어야함-->
                 <!-- <input type="submit" value="삭제하기" formaction="delete"> -->
             </ul>
+			<ul>
+				<li class="cont_notice_li" href="${dto.emp_postNo}">
+					<a class="move_link">${dto.emp_title}</a>
+					<a class="move_link">${dto.emp_startDate}</a>
+				</li>
+			</ul>
         </div><!-- end cont_notice-->
 
         <div id="cont_myQuestion">
@@ -124,4 +134,15 @@
 
     </div>
 </body>
+<script>
+	document.querySelector('.mypage_button').addEventListener('click', function() {
+	    document.getElementById('cont_mypage').style.display = 'none';
+	    document.getElementById('cont_mypageEdit').style.display = 'block';
+		document.getElementById('cont_apply').style.display = 'none';
+		document.getElementById('cont_recommend').style.display = 'none';
+		document.getElementById('cont_scrap').style.display = 'none';
+		document.getElementById('cont_resume').style.display = 'none';
+		document.getElementById('cont_myQuestion').style.display = 'none';
+	});
+</script>
 </html>
