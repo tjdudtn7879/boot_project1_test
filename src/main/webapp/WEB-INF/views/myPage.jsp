@@ -18,11 +18,11 @@
     <div id="wrap">
 
 		<header id="header">
-            <div class="header_logo">
+            <div class="header_logo"><a href="main">
                 <div class="header_logo_img"><img src="./resources/img/logo.png"></div>
-            </div>
+            </a></div>
             <h3>Good Job</h3>
-			<a>사용자</a><!-- 여기에 사용자 아이디 받아서 올리기-->
+			<a class="header_user_id">${dto.user_id}</a><!-- 여기에 사용자 아이디 받아서 올리기-->
 			<div class="user_ico">
 				<div class="user_ico_img"><img src="./resources/img/user-icon.png"></div>
 			</div>
@@ -68,7 +68,7 @@
 	        	</div>
 				<div class="cont_mypage_right">
 					<a class="cont_mypage_ID">${dto.user_id}<!--여기에 아이디정보 받은거 추가 --></a><br><br>
-		            <a class="cont_mypage_sex">male<!--여기에 성별정보 받은거 추가 --></a><br><br>
+		            <a class="cont_mypage_sex">${dto.user_sex}<!--여기에 성별정보 받은거 추가 --></a><br><br>
 		            <a class="cont_mypage_name">${dto.user_name}<!--여기에 이름정보 받은거 추가 --></a><br><br>
 		            <a class="cont_mypage_birth">${dto.user_birth}<!--여기에 생년월일정보 받은거 추가 --></a><br><br>
 		            <a class="cont_mypage_email">${dto.user_email}<!--여기에 이메일정보 받은거 추가 --></a><br><br>
@@ -80,7 +80,7 @@
 		</div><!-- end cont_mypage -->
 
         <div id="cont_mypageEdit">
-			<form method="get" action="modify">
+			<form method="post" action="modify">
 	            <h2>개인정보변경</h2><br><br>
 				<div class="cont_mypageEditWrap">
 					<div class="cont_mypageEdit_left">
@@ -96,7 +96,7 @@
 					<div class="cont_mypageEdit_right">
 						<a class="cont_mypageEdit_ID">${dto.user_id}</a><br>
 			            <input type="text" name="cont_mypageEdit_PWD" size="50"><br>
-						<a class="cont_mypageEdit_sex">male</a><br>
+						<a class="cont_mypageEdit_sex">${dto.user_name}</a><br>
 						<a class="cont_mypageEdit_name">${dto.user_name}</a><br>
 						<a class="cont_mypageEdit_birth">${dto.user_birth}</a><br>
 						<input type="text" name="cont_mypageEdit_phoneNumber" size="10"><br>
@@ -189,7 +189,7 @@
             <h2>이력서관리</h2>
 			<div class="resume_write_wrap">
 				<div class="resume_write">
-	            	<a class="resume_write_txt" href="">이력서작성</a> <!--링크 이력서 페이지로-->
+	            	<a class="resume_write_txt" href="resume">이력서작성</a>
 				</div>
 			</div>
 			<div class="cont_resume_img">광고이미지</div>
@@ -200,7 +200,11 @@
                 <!-- 이력서 리스트 안에 수정하기 / 삭제하기 버튼 만들어야함-->
 				<li class="cont_resume_li" href="${dto.cv_no}">
 					<a class="move_link">${dto.cv_name}</a>
-					<a class="move_link">${dto.cv_no}</a>			
+					<a class="move_link">${dto.cv_no}</a>		
+					<div class="cont_resume_editButton">
+		        		<a class="resume_edit_txt" href="resume_edit">이력서수정</a>
+			            <input type="submit" value="삭제하기" formaction="delete"> <!-- 컨트롤러단에 delete 생성하기-->
+					</div>
 				</li>
             </ul>
 			<ul>

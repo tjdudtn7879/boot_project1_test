@@ -15,7 +15,7 @@
 	float: right;
 	margin-top: 1.5%;
 }
-#header a{
+.header_user_id{
 	float:right;
 	margin-top: 1.5%;
 	font-size: 20px;
